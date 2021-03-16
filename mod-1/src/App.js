@@ -1,13 +1,13 @@
 import React from 'react';
 
-import { Jokes } from './components/jokes';
+import { Jokes } from './components/jokes/jokes';
 import { CounterClass, CounterFunction } from './components/counter';
 
 function App() {
   return (
     <div>
-      {/* <CounterClass /> */}
-      {/* <CounterFunction /> */}
+      <CounterClass />
+      <CounterFunction />
 
       <Jokes heading="Jon Skeet Jokes" />
     </div>

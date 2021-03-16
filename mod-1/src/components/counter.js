@@ -6,11 +6,16 @@ export class CounterClass extends Component {
   render() {
     return (
       <div>
-        <h2>Counter Class</h2>
+        <h2>Counter Class..</h2>
         <p>The count is: {this.state.count}</p>
         <button
           onClick={() => {
-            this.setState({ count: this.state.count + 1 });
+            this.setState((state) => ({
+              count: state.count + 1,
+            }));
+            this.setState((state) => ({
+              count: state.count + 1,
+            }));
           }}
         >
           Increment
@@ -25,11 +30,12 @@ export function CounterFunction() {
 
   return (
     <div>
-      <h2>Counter Function</h2>
+      <h2>Counter Function..</h2>
       <p>The count is: {count}</p>
       <button
         onClick={() => {
-          setCount(count + 1);
+          setCount((c) => c + 1);
+          setCount((c) => c + 1);
         }}
       >
         Increment
