@@ -9,7 +9,7 @@ export function Jokes() {
 
   return (
     <div>
-      <h2>Chuck Norris Jokes</h2>
+      <h2>Chuck Norris great Jokes</h2>
       <ul>
         {jokes.map((joke) => (
           <li key={joke.id}>

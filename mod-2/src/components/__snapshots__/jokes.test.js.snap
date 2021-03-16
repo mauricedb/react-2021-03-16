@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders two joke 1`] = `
+<div>
+  <div>
+    <h2>
+      Chuck Norris great Jokes
+    </h2>
+    <ul>
+      <li>
+        Some joke
+         
+        <button>
+          ␡
+        </button>
+      </li>
+      <li>
+        Another joke
+         
+        <button>
+          ␡
+        </button>
+      </li>
+    </ul>
+  </div>
+</div>
+`;
