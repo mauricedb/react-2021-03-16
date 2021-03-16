@@ -1,0 +1,6 @@
+.primes {
+  max-width: 1200px;
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+}
