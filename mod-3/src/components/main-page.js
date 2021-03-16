@@ -21,3 +21,30 @@ export function MainPage() {
     </div>
   );
 }
+
+// function GreetFormInput({ children }) {
+//   const [name, setName] = useState('Maurice');
+//   return (
+//     <>
+//       <div>
+//         <label>
+//           Name:
+//           <input value={name} onChange={(e) => setName(e.target.value)} />
+//         </label>
+//       </div>
+//       <Greeting name={name} />
+//       {children}
+//     </>
+//   );
+// }
+
+// export function MainPage() {
+//   return (
+//     <div className={classes.page}>
+//       <h1>Performance Tuning</h1>
+//       <GreetFormInput>
+//         <Primes />
+//       </GreetFormInput>
+//     </div>
+//   );
+// }

@@ -1,5 +1,6 @@
 import React from 'react';
-// import { useInView } from 'react-intersection-observer';
+import { useInView } from 'react-intersection-observer';
+import 'moment';
 
 import classes from './prime.module.css';
 
@@ -20,10 +21,14 @@ function isPrime(value) {
 }
 
 export function Prime({ value }) {
+  const { ref, inView } = useInView();
+
   return (
-    <div className={classes.prime}>
+    <div className={classes.prime} ref={ref}>
       <div>{numberFormat.format(value)}</div>
-      <div>{isPrime(value) ? '✔️' : '❌'}</div>
+      <div>{!inView ? '?' : isPrime(value) ? '✔️' : '❌'}</div>
     </div>
   );
 }
+
+export const FastPrime = React.memo(Prime);
