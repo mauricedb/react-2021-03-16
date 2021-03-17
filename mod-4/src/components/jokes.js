@@ -5,26 +5,28 @@ import classes from './jokes.module.css';
 
 import { JokeDetails } from './joke-details';
 import { SingleJoke } from './single-joke';
+import { ErrorBoundary } from './error-boundary';
 
-export function Jokes({ heading, theme, url }) {
+import { useFetch } from './useFetch';
+import { themeContext } from './theme-context';
+
+function ErrorDisplay({ error }) {
+  return <div>There was an error: {error.message}</div>;
+}
+
+export function Jokes({ heading, url }) {
+  const { theme } = React.useContext(themeContext);
   const [selected, setSelected] = useState(null);
-  const [jokes, setJokes] = useState(null);
 
-  useEffect(() => {
-    async function fetchJokes() {
-      const rsp = await fetch(url);
-      const jokes = await rsp.json();
-      setJokes(jokes);
-    }
+  const { data: jokes, status } = useFetch(url);
 
-    fetchJokes();
-  }, [url]);
-
-  if (!jokes) {
-    return <div>Loading...</div>;
+  if (status === 'error') {
+    return <div>Some error...</div>;
   }
 
-  console.log(classes);
+  if (status !== 'ready') {
+    return <div>Loading...</div>;
+  }
 
   return (
     <div>
@@ -39,7 +41,9 @@ export function Jokes({ heading, theme, url }) {
           </ul>
         </div>
         <div className={classNames(classes.panel, classes[theme])}>
-          <JokeDetails joke={selected} />
+          <ErrorBoundary key={selected?.id} errorComponent={<ErrorDisplay />}>
+            {() => <JokeDetails joke={selected} />}
+          </ErrorBoundary>
         </div>
       </div>
     </div>
