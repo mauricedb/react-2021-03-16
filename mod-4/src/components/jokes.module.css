@@ -1,0 +1,19 @@
+.jokes {
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: 1fr 1fr;
+  margin: 1rem;
+}
+
+.panel {
+  /* border: 1px solid black; */
+  padding: 1rem;
+}
+
+.light {
+  border: 1px solid black;
+}
+
+.dark {
+  border: 1px solid white;
+}

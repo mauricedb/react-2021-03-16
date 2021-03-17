@@ -1,0 +1,19 @@
+.app {
+  height: 100vh;
+}
+
+.footer {
+  position: absolute;
+  bottom: 5px;
+  left: 5px;
+}
+
+.light {
+  background-color: white;
+  color: black;
+}
+
+.dark {
+  background-color: black;
+  color: white;
+}
